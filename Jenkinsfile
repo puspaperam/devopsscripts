@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Clean Workspace') {
-            steps {
-                sh 'dir'
-            }
-        }
         stage('Checkout') {
             steps {
                 git 'https://github.com/ReyazShaik/java-project-maven-new.git'
