@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clean Workspace') {
             steps {
-                sh 'cleanWs()'
+                sh 'dir'
             }
         }
         stage('Checkout') {
