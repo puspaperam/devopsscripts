@@ -18,8 +18,10 @@ pipeline {
         }
         stage('SonarQube Scanning') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar' 
+                withSonarQubeEnv(credentialsId: 'sonar_hotstar', installationName: 'sonarqube'){
+                sh 'mvn sonar:sonar'
+              //  withSonarQubeEnv('SonarQube') {
+                  //  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar' 
                 }                
             }
         }
