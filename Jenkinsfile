@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 deploy adapters: [tomcat7(credentialsId: 'tomcat_cre', path: '', url: 'http://192.168.124.129:8080/')], contextPath: 'myapp', war: '**/*.war'
-               // deploy adapters: [tomcat9(credentialsId: 'tomcatcreds', path: '', url: 'http://43.205.95.19:8080/')], contextPath: 'myapp', war: '**/*.war'
+               
             }
         }
         stage('Nexus') {
