@@ -18,10 +18,9 @@ pipeline {
         }
         stage('SonarQube Scanning') {
             steps {
-                withSonarQubeEnv('sonarqube'){
-                sh 'mvn sonar:sonar'
-              //  withSonarQubeEnv('SonarQube') {
-                  //  sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar' 
+                
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar' 
                 }                
             }
         }
